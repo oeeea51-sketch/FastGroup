@@ -1,9 +1,9 @@
 {
     "geode": "v5.6.0",
-    "id": "yourname.autoconfirm",
+    "id": "lopopolop.autoconfirm",
     "version": "1.0.0",
     "name": "AutoConfirm",
-    "developer": "YourName",
+    "developer": "lopopolop",
     "description": "AutoConfirm speeds up your Geometry Dash editor workflow! No more wasting time on extra clicks when assigning groups to objects and triggers. The mod automatically displays a convenient \"Confirm\" popup and applies your changes instantly. Build and edit your custom levels with maximum comfort!",
     "dependencies": [
         {
