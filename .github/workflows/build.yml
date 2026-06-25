@@ -13,13 +13,10 @@ jobs:
       matrix:
         config:
           - name: Windows
-            os: windows-latest
-          - name: Android32
+            os: windows-2022
+          - name: Android
             os: ubuntu-latest
-            target: Android32
-          - name: Android64
-            os: ubuntu-latest
-            target: Android64
+            target: Android
 
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
@@ -27,17 +24,6 @@ jobs:
     steps:
       - name: Checkout Circuit
         uses: actions/checkout@v4
-
-      # ВАЖНЫЙ ШАГ: Этот блок теперь скачает Geode SDK, чтобы ошибка исчезла!
-      - name: Setup Geode CLI
-        uses: geode-sdk/cli-navigator@main
-
-      # Этот блок установит компиляторы для Android
-      - name: Setup Android NDK
-        if: matrix.config.target == 'Android32' || matrix.config.target == 'Android64'
-        uses: nndess/setup-ndk@v1
-        with:
-          ndk-version: r26b
 
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
